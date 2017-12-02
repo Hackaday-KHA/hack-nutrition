@@ -23,7 +23,7 @@ clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 @get_food.route("/get_food")
 def articles():
 
-    result = {'hello': 'yes', 'World':now}
+    result = {'hello': 'yes', 'World':'no'}
     print(json.dumps(result))
     print(dataUrl)
 
