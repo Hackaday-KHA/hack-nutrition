@@ -8,7 +8,7 @@ from clarifai import rest
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
 
-get_food = Blueprint('get_food', __name__)
+hasura_examples = Blueprint('hasura_examples', __name__)
 clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 
 app = ClarifaiApp(api_key=clarifaiAPIKey)
@@ -20,7 +20,7 @@ model = app.models.get('food-items-v1.0')
 image = ClImage(url='http://www.bulkingbro.com/wp-content/uploads/2014/11/bulkingbro-pasta.jpg')
 result = model.predict([image])
 
-@get_food.route("/get_food")
+@hasura_examples.route("/get_food")
 def articles():
 
 
