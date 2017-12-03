@@ -1,7 +1,7 @@
 from flask import Flask
 from .hasuraExamples import hasura_examples
 from .getFood import get_food
-from .get_nutrition import get_nutrition
+from .getNutriton import get_nutrition
 app = Flask(__name__)
 
 # This line adds the hasura example routes form the hasuraExamples.py file.
