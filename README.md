@@ -1,5 +1,18 @@
 # hello-python-flask
 
+Call clarifai with image URL
+
+https://www.archaism68.hasura-app.io/get_food?imURL=http://........
+
+this will give you response with item names and probability
+
+get itmes from the response and pass them to
+
+https://www.archaism68.hasura-app.io/get_nutrition?foodType=tomato
+
+changing the foodType to the types you got from clarifai
+
+
 This project consists of a basic Hasura project with a simple Python-Flask app running on it. Once this app is deployed on a Hasura cluster, you will have the app running at `https://api.<cluster-name>.hasura-app.io`
 
 This is the right place to start if you are planning to build or want to learn to build an Python-Flask app with Hasura.
