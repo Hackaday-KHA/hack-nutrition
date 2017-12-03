@@ -2,4 +2,3 @@ flask
 requests
 gunicorn
 Pillow
-clarifai
