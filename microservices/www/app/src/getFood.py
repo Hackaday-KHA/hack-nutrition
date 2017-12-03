@@ -5,13 +5,13 @@ from .config import dataUrl, dataHeaders
 
 # The package will be accessible by importing clarifai:
 
-try:
+'''try:
     from clarifai import rest
 except:
     result = "not imported "
 #from clarifai.rest import ClarifaiApp
 #from clarifai.rest import Image as ClImage
-
+'''
 get_food = Blueprint('get_food', __name__)
 clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 
