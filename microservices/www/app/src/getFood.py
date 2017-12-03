@@ -16,9 +16,9 @@ clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 #image = ClImage(url='http://www.bulkingbro.com/wp-content/uploads/2014/11/bulkingbro-pasta.jpg')
 #result = model.predict([image])
 
-@get_food.route("/get_food")
+@get_food.route("/get_food/<photoURL>")
 def articles():
-    query = {"inputs": [{"data": {"image":{"url": "http://www.bulkingbro.com/wp-content/uploads/2014/11/bulkingbro-pasta.jpg"}}}]}
+    query = {"inputs": [{"data": {"image":{"url": photoURL}}}]}
 
     response = requests.post( dataUrl_clarifai, data = json.dumps(query), headers = dataheaders_clarifai)
     result = response.content.decode('latin1')
