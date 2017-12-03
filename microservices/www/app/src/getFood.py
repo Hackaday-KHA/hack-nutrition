@@ -3,7 +3,7 @@ import json
 import requests
 from .config import dataUrl, dataHeaders
 
-dataUrl_clarifai = "https://api.clarifai.com/v2/models/dfebc169854e429086aceb8368662641/outputs"
+dataUrl_clarifai = "https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs"
 dataheaders_clarifai = {
 "Content-Type": "application/json",
 "Authorization": "Key a477319ad56c4fa68a22d52eff5c786e"}
