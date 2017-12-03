@@ -3,31 +3,25 @@ import json
 import requests
 from .config import dataUrl, dataHeaders
 
-# The package will be accessible by importing clarifai:
+dataUrl_clarifai = "https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs"
+dataheaders_clarifai = {
+"Content-Type": "application/json",
+"Authorization": "b6b0b0be59e9c60a4e9194119834deca"}
 
-'''try:
-    from clarifai import rest
-except:
-    result = "not imported "
-#from clarifai.rest import ClarifaiApp
-#from clarifai.rest import Image as ClImage
-'''
 get_food = Blueprint('get_food', __name__)
 clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 
-#appClarify = ClarifaiApp(api_key=clarifaiAPIKey)
-
-# get the general model
 #model = appClarify.models.get('food-items-v1.0')
-# predict with the model
-#model.predict_by_url(url='https://samples.clarifai.com/metro-north.jpg')
+
 #image = ClImage(url='http://www.bulkingbro.com/wp-content/uploads/2014/11/bulkingbro-pasta.jpg')
 #result = model.predict([image])
 
 @get_food.route("/get_food")
 def articles():
+    query = '{"inputs": [{"data": {"image":{"url": "https://samples.clarifai.com/metro-north.jpg"}}}]}'
 
-    result = result + "hello world" #{'hello': 'yes', 'World':'no'}
+    response = requests.post( dataUrl_clarifai, data = json.dumps(query), headers = dataheaders_clarifai)
+    result = response.content.decode('latin1')
     #print(json.dumps(result))
     #print(dataUrl)
 
