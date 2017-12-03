@@ -7,7 +7,8 @@ WORKDIR /usr/src/app
 # and since COPY is cached we don't need to wait
 COPY app/src/requirements.txt /tmp/requirements.txt
 RUN pip3 install -r /tmp/requirements.txt
-
+RUN apk add --no-cache --virtual .build-deps build-base linux-headers
+RUN apk add --no-cache jpeg-dev zlib-dev
 COPY app /usr/src/app
 
 # App port number is configured through the gunicorn config file
