@@ -1,6 +1,7 @@
 from flask import Blueprint
 import json
 import requests
+from flask import request
 from .config import dataUrl, dataHeaders
 
 dataUrl_clarifai = "https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs"
@@ -16,9 +17,10 @@ clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 #image = ClImage(url='http://www.bulkingbro.com/wp-content/uploads/2014/11/bulkingbro-pasta.jpg')
 #result = model.predict([image])
 
-@get_food.route("/get_food/<photoURL>")
+@get_food.route("/get_food")
 def articles():
-    query = {"inputs": [{"data": {"image":{"url": photoURL}}}]}
+    imURL = request.args.get('imURL')
+    query = {"inputs": [{"data": {"image":{"url": imURL}}}]}
 
     response = requests.post( dataUrl_clarifai, data = json.dumps(query), headers = dataheaders_clarifai)
     result = response.content.decode('latin1')
