@@ -6,7 +6,7 @@ from .config import dataUrl_nutrition, dataheaders_nutrition
 get_nutrition = Blueprint('get_nutrition', __name__)
 
 @get_nutrition.route("/get_nutrition")
-def article():
+def articles():
 
     query = { 'query': 'apple' }
 
