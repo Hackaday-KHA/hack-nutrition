@@ -6,10 +6,10 @@ from .config import dataUrl_nutrition, dataHeaders_nutrition
 get_nutrition = Blueprint('get_nutrition', __name__)
 
 @get_nutrition.route("/get_nutrition")
-def nutrition_query():
+def article():
 
     query = { 'query': 'select' }
-    
+
     print(json.dumps(query))
     print(dataUrl_nutrition)
 
