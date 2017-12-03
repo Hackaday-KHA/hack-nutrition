@@ -3,10 +3,10 @@ import json
 import requests
 from .config import dataUrl, dataHeaders
 
-dataUrl_clarifai = "https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs"
+dataUrl_clarifai = "https://api.clarifai.com/v2/models/dfebc169854e429086aceb8368662641/outputs"
 dataheaders_clarifai = {
 "Content-Type": "application/json",
-"Authorization": d2f08a3a17894b3da12cb03f291f9d6c}
+"Authorization": "d2f08a3a17894b3da12cb03f291f9d6c"}
 
 get_food = Blueprint('get_food', __name__)
 clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
