@@ -6,7 +6,7 @@ from .config import dataUrl, dataHeaders
 dataUrl_clarifai = "https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs"
 dataheaders_clarifai = {
 "Content-Type": "application/json",
-"Authorization": "b6b0b0be59e9c60a4e9194119834deca"}
+"Authorization": "d2f08a3a17894b3da12cb03f291f9d6c"}
 
 get_food = Blueprint('get_food', __name__)
 clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
@@ -18,7 +18,7 @@ clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 
 @get_food.route("/get_food")
 def articles():
-    query = '{"inputs": [{"data": {"image":{"url": "https://samples.clarifai.com/metro-north.jpg"}}}]}'
+    query = {"inputs": [{"data": {"image":{"url": "https://samples.clarifai.com/metro-north.jpg"}}}]}
 
     response = requests.post( dataUrl_clarifai, data = json.dumps(query), headers = dataheaders_clarifai)
     result = response.content.decode('latin1')
