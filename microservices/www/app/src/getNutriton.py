@@ -10,7 +10,9 @@ get_nutrition = Blueprint('get_nutrition', __name__)
 def articles():
 
     food = request.args.get('foodType')
-    query = { 'query': food }
+    query = { 'query' : food,
+    		  'num_servings' : 1
+              'use_branded_foods' : true }
 
     #print(json.dumps(query))
     #print(dataUrl_nutrition)
