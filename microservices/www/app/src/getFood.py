@@ -4,14 +4,18 @@ import requests
 from .config import dataUrl, dataHeaders
 
 # The package will be accessible by importing clarifai:
-from clarifai import rest
-from clarifai.rest import ClarifaiApp
-from clarifai.rest import Image as ClImage
+
+try:
+    from clarifai import rest
+except:
+    result = "not imported "
+#from clarifai.rest import ClarifaiApp
+#from clarifai.rest import Image as ClImage
 
 get_food = Blueprint('get_food', __name__)
 clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 
-appClarify = ClarifaiApp(api_key=clarifaiAPIKey)
+#appClarify = ClarifaiApp(api_key=clarifaiAPIKey)
 
 # get the general model
 #model = appClarify.models.get('food-items-v1.0')
@@ -23,7 +27,7 @@ appClarify = ClarifaiApp(api_key=clarifaiAPIKey)
 @get_food.route("/get_food")
 def articles():
 
-    result = "hello world" #{'hello': 'yes', 'World':'no'}
+    result = result + "hello world" #{'hello': 'yes', 'World':'no'}
     #print(json.dumps(result))
     #print(dataUrl)
 
