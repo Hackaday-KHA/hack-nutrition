@@ -1,4 +1,4 @@
 flask
 requests
 gunicorn
-Pillow=4.1
+Pillow==4.1
