@@ -15,4 +15,4 @@ def article():
 
     response = requests.post( dataUrl_nutrition, data = json.dumps(query), headers = dataheaders_nutrition)
 
-    return response.content
+    return response.content.decode('latin1')
