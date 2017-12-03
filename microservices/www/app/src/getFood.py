@@ -3,7 +3,7 @@ import json
 import requests
 from .config import dataUrl, dataHeaders
 
-dataUrl_clarifai = "https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs"
+dataUrl_clarifai = "https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs"
 dataheaders_clarifai = {
 "Content-Type": "application/json",
 "Authorization": "Key a477319ad56c4fa68a22d52eff5c786e"}
@@ -18,7 +18,7 @@ clarifaiAPIKey = "d2f08a3a17894b3da12cb03f291f9d6c"
 
 @get_food.route("/get_food")
 def articles():
-    query = {"inputs": [{"data": {"image":{"url": "https://samples.clarifai.com/metro-north.jpg"}}}]}
+    query = {"inputs": [{"data": {"image":{"url": "http://www.bulkingbro.com/wp-content/uploads/2014/11/bulkingbro-pasta.jpg"}}}]}
 
     response = requests.post( dataUrl_clarifai, data = json.dumps(query), headers = dataheaders_clarifai)
     result = response.content.decode('latin1')
